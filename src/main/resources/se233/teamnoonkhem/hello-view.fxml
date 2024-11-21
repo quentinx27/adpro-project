@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="464.0" prefWidth="1021.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se233.teamnoonkhem.Controller.MainController">
+    <children>
+        <!-- Image Display and Zoom Controls -->
+        <AnchorPane layoutX="14.0" layoutY="309.0" prefWidth="137.0">
+            <children>
+                <Button fx:id="resetZoomButton" layoutY="36.0" mnemonicParsing="false" text="Reset Zoom" />
+                <Button fx:id="zoomOutButton" layoutX="69.0" layoutY="2.0" mnemonicParsing="false" text="Zoom Out" />
+                <Button fx:id="zoomInButton" layoutY="2.0" mnemonicParsing="false" text="Zoom In" />
+            </children>
+        </AnchorPane>
+
+        <!-- Drop File Zone -->
+        <StackPane layoutX="217.0" layoutY="34.0" prefHeight="400.0" prefWidth="585.0">
+            <children>
+                <ScrollPane fx:id="imageScrollPane" pannable="true" prefHeight="400.0" prefWidth="585.0" style="-fx-border-color: BCB6B6; -fx-border-width: 5;">
+                    <BorderPane fx:id="imagePane">
+                        <center>
+                            <ImageView fx:id="imageView" fitHeight="400" fitWidth="585.0" preserveRatio="true" />
+                        </center>
+                    </BorderPane>
+                </ScrollPane>
+                <Label fx:id="chooseAndDropLabel" layoutX="4.0" layoutY="6.0" prefHeight="361.0" prefWidth="548.0" style="-fx-font-size: 18px; -fx-text-fill: gray;" />
+                <Label fx:id="chooseAndDroptxt" layoutX="72.0" layoutY="161.0" prefHeight="48.0" prefWidth="429.0" style="-fx-font-size: 35px; -fx-text-fill: darkgray;" text="Drop and Choose File HERE" />
+            </children>
+        </StackPane>
+        <!-- File List and Controls -->
+        <AnchorPane layoutX="840.0" layoutY="34.0" prefHeight="400.0" prefWidth="150.0">
+            <children>
+                <VBox layoutX="-1.0" layoutY="-2.0" spacing="10.0" />
+                <Button fx:id="confirmCropButton" layoutX="74.0" layoutY="167.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Confirm Crop" />
+                <Button fx:id="saveButton" layoutX="97.0" layoutY="242.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Save" />
+                <Button fx:id="revertToOriginalButton" layoutX="1.0" layoutY="196.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Revert To Original" />
+                <Button fx:id="startCropButton" layoutX="1.0" layoutY="167.0" mnemonicParsing="false" text="Start Crop" />
+                <Button fx:id="BatchcropButton" layoutX="1.0" layoutY="138.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Batch Processing Crop" />
+                <ComboBox fx:id="edgeAlgorithmChoice" layoutX="2.0" layoutY="44.0" prefHeight="26.0" prefWidth="160.0" promptText="Select Detecting" />
+                <ComboBox fx:id="kernelSizeChoice" layoutX="88.0" layoutY="83.0" prefHeight="26.0" prefWidth="60.0" />
+                <ComboBox fx:id="grayscaleMethod" layoutX="64.0" layoutY="84.0" prefHeight="26.0" prefWidth="98.0" />
+                <Button fx:id="detectEdgesButton" layoutX="1.0" layoutY="14.0" mnemonicParsing="false" text="Detects" />
+                <Button fx:id="detectAllButton" layoutX="63.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Detects All" />
+                <Label fx:id="savefileTxt" layoutX="14.0" layoutY="246.0" text="Save File Here:" />
+                <Label fx:id="kernelSizetxt" layoutX="23.0" layoutY="88.0" text="kernel Size:" />
+                <Label fx:id="grayscaletxt" layoutX="6.0" layoutY="89.0" text="Grayscale:" />
+                <Label fx:id="strengthtxt" layoutX="-1.0" layoutY="80.0" text="Strength:" />
+                <Button fx:id="previousButton" layoutX="2.0" layoutY="333.0" text="Previous" />
+                <Button fx:id="nextButton" layoutX="67.0" layoutY="333.0" text="Next" />
+                <Slider fx:id="strengthSlider" blockIncrement="1" layoutX="68.0" layoutY="78.0" max="100" min="1" prefHeight="38.0" prefWidth="94.0" showTickLabels="true" showTickMarks="true" value="50" />
+                <Label fx:id="strengthValueLabel" layoutX="90.0" layoutY="116.0" style=" -fx-text-fill: blue" text="Default 50" />
+
+            </children>
+        </AnchorPane>
+
+        <!-- Labels for UI -->
+        <Label fx:id="functionTxt" layoutX="840.0" layoutY="15.0" text="Functions" />
+        <Label fx:id="showfileTxt" layoutX="14.0" layoutY="15.0" text="Show File" />
+
+        <!-- File List View -->
+        <AnchorPane layoutX="11.0" layoutY="40.0">
+            <children>
+                <ListView fx:id="fileListView" prefHeight="200.0" prefWidth="170.0" AnchorPane.bottomAnchor="-46.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0" />
+            </children>
+        </AnchorPane>
+
+        <!-- Clear Button -->
+        <Button fx:id="clearButton" layoutX="101.0" layoutY="249.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Clear Files" />
+        <Label fx:id="zoomTxt" layoutX="14.0" layoutY="292.0" text="Zoom" />
+          <Label fx:id="pressEtxt" layoutX="217.0" layoutY="15.0" style=" -fx-text-fill: red" text="***Press E to cancel Crop and Batch crop***" />
+    </children>
+</AnchorPane>
